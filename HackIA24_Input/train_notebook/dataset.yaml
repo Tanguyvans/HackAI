@@ -1,0 +1,7 @@
+names:
+- smoke
+- fire
+path: ../datasets/D-Fire
+test: images/test
+train: images/train
+val: images/valid
