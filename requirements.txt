@@ -3,3 +3,7 @@ scikit-image
 matplotlib
 cmake 
 opencv-python
+ultralytics
+torch 
+torchvision
+grad-cam
