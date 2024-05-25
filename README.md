@@ -4,6 +4,14 @@ This project is a collection of AI tools. We focused on AI model compression and
 
 Around this network compression we built a edge application using a Jetson Xavier nx card. This application was used to detect fire in the wild and send a notification to the user using telegram. To access the application, the user needs to go through a face recognition system.
 
+# Image classification
+
+## Data Cleaning
+
+Before initiating model development, we undertook a comprehensive data cleaning process. We meticulously reviewed the provided dataset, removing any data points that were incorrectly labeled, difficult to classify, or not genuine. This preliminary step helped us identify the need for greater diversity within our dataset.
+
+To ensure our model does not rely solely on the color red for fire detection, we enriched the dataset with non-fire images that predominantly feature red hues, such as red pandas and autumn leaves. Recognizing that many fires occur at night, we also incorporated images of fires taken during daytime conditions to create a more robust and versatile training dataset.
+
 ## Models
 
 Before choosing our final model, we tried a lot of models. We used a lot of different models and applied some finetuning. Overall in terms of performance, the model that gave us the best results was the Squeezenet. The Squeezenet model is a good model for image classification offering a good balance between accuracy and efficiency.
@@ -43,7 +51,19 @@ With our more elaborated model (Resnet152), we can use knowledge distillation to
 
 We tried pruning on the Squeezenet model. However, due to incompatibility between the model and the pruning tool, we could not apply pruning. One solution to rewrite the pruning script provided for the Hackathon.
 
-## Folders
+# Object detection
+
+## Data Augmentation
+
+For this part of the hackathon, we received a labeled dataset of fire and smoke. Using the dataset provided for image classification, we decided to annotate the images for use in object detection. For the annotation process, we utilized RoboFlow and created a new dataset comprising 750 images.
+
+However, since the provided dataset for the project had different labels, we did not have the time to make the required changes.
+
+## Models
+
+We chose Yolov9c as our base model. Due to time constraints, we were only able to train the model for 5 epochs. The training was prematurely stopped because of limited time, which likely impacted the model's potential accuracy. Extending the number of epochs in future sessions could significantly enhance the model's performance.
+
+# Folders
 
 The repository contains the following folders:
 
@@ -53,6 +73,6 @@ The repository contains the following folders:
 - 4_telegram_bot: Contains the telegram bot.
 - HackIA24_Input: Contains the starting code from the Hackathon.
 
-## How to use
+# How to use
 
 The notebooks are made to be used in Google Colab. A requirements.txt is provided to install the dependencies. To use the telegram bot, you need to replace the TOKEN in the 4_telegram_bot/main.py file with your token.
