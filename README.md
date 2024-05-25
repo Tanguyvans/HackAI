@@ -32,7 +32,7 @@ Using another dataset, we tried using the Vision Transformer model. The Vision T
 
 ## Optimization
 
-Once our model is chosen, we can optimize it. We used a lot of different methods to optimize the model.
+Once our model has been chosen, we were able to optimize it. We used a lot of different methods to optimize the model.
 
 ### Quantization
 
